@@ -31,6 +31,15 @@ namespace SchoolManagementUsingWebApi.Controllers
             return Ok(d);
         }
 
+        [Route("GetStudentById/{id}")]
+        [HttpGet]
+        public IActionResult GetStudentById(int id)
+        {
+            var d = db.Students.Where(x=> x.StudentId.Equals(id));
+            return Ok(d);   
+        }
+
+
         [Route("GetTimeTable")]
         [HttpGet]
         public IActionResult GetTimeTable()
